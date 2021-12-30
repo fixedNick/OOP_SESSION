@@ -1,0 +1,10 @@
+UML - язык графического описания для объектного моделирования. Благодаря ему можно
+схематично показать какие у классов/структур/интерфейсов есть поля/методы и т.п., 
+какие зависимости они используют.
+
+[Wikipedia]
+=> https://ru.wikipedia.org/wiki/UML
+[Огромное и тошнотворное описание UML]
+=> https://studizba.com/lectures/10-informatika-i-programmirovanie/273-uml/3457-2-vidy-diagramm-uml.html
+[Сжатое описание работы с UML с прмерами]
+=> https://evergreens.com.ua/ru/articles/uml-diagrams.html
