@@ -1,0 +1,133 @@
+-- [ 7 ] --
+=> https://docs.microsoft.com/ru-ru/cpp/cpp/virtual-functions?view=msvc-170
+=> https://docs.microsoft.com/ru-ru/cpp/cpp/abstract-classes-cpp?view=msvc-170
+=> https://ravesli.com/urok-161-mnozhestvennoe-nasledovanie/
+=> https://habr.com/ru/post/185826/
+
+-- [ 8 ] --
+=> https://autogear.ru/article/374/311/peregruzka-operatorov-v-s-osnovyi-primeryi/
+=> https://habr.com/ru/post/489666/
+
+-- [ 9 ] --
+=> https://docs.microsoft.com/ru-ru/cpp/preprocessor/macros-c-cpp?view=msvc-170
+=> https://docs-microsoft-com.translate.goog/ru-ru/cpp/cpp/inline-functions-cpp?view=msvc-170&_x_tr_sl=ru&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=sc
+=> https://docs.microsoft.com/ru-ru/cpp/cpp/templates-cpp?view=msvc-170
+
+-- [ 10 ] --
+=> https://docs.microsoft.com/ru-ru/cpp/cpp/class-templates?view=msvc-170
+=> https://ravesli.com/urok-175-shablony-klassov/
+
+-- [ 11 ] --
+=> https://docs.microsoft.com/ru-ru/cpp/cpp/errors-and-exception-handling-modern-cpp?view=msvc-170
+=> https://ravesli.com/urok-182-obrabotka-isklyuchenij/
+
+-- [ 12 ] --
+=> https://docs.microsoft.com/ru-ru/cpp/cpp/namespaces-cpp?view=msvc-170
+=> https://ravesli.com/urok-53-prostranstva-imen/
+
+-- [ 13 ] --
+=> https://docs.microsoft.com/ru-ru/cpp/standard-library/string?view=msvc-170
+=> http://edu.mmcs.sfedu.ru/pluginfile.php/19395/mod_resource/content/1/CPP-Streams.pdf
+=> https://en.cppreference.com/w/cpp/io
+=> https://docs.microsoft.com/ru-ru/cpp/cpp/smart-pointers-modern-cpp?view=msvc-170
+=> https://ravesli.com/urok-193-std-unique_ptr/
+=> https://it.wikireading.ru/35966
+=> http://www.quizful.net/interview/cpp/stl-stream-iterator
+
+-- [ 14 ] --
+=> https://docs.microsoft.com/ru-ru/cpp/standard-library/stl-containers?view=msvc-170
+=> https://ravesli.com/algoritmy-v-standartnoj-biblioteke-s/
+=> https://ravesli.com/urok-139-peregruzka-operatora-kruglye-skobki/
+=> https://docs.microsoft.com/ru-ru/cpp/cpp/lambda-expressions-in-cpp?view=msvc-170
+=> https://habr.com/ru/post/310270/
+=> https://docs.microsoft.com/ru-ru/cpp/standard-library/functional-functions?view=msvc-170
+
+-- [ 15 ] --
+Устойчивость в данном контексте означает, что объект можно сохранить в
+файл на диске, а затем восстановить обратно.
+=> https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/6bz744w8(v=vs.90)?redirectedfrom=MSDN
+
+-- [ 16 ] --
+=> https://docs.microsoft.com/ru-ru/cpp/windows/walkthrough-creating-windows-desktop-applications-cpp?view=msvc-170
+=> https://prog-cpp.ru/category/win-posts/
+
+-- [ 17 ] --
+=> https://docs.microsoft.com/ru-ru/cpp/mfc/mfc-desktop-applications?view=msvc-170
+=> https://docs.microsoft.com/en-us/cpp/mfc/document-view-architecture?view=msvc-170
+
+-- [ 18 ] --
+=> https://docs.microsoft.com/ru-ru/cpp/mfc/allocating-gdi-resources?view=msvc-170
+
+-- [ 19 ] --
+=> http://www.codenet.ru/progr/visualc/mfc/mfc5.php
+
+-- [ 20 ] --
++ пространства имен, классы, интерфейсы.
+
+-- [ 21 ] -- 
+(0) перегрузка операций
+(1) свойства
+(2) делегаты
+(3) лямбда-функции
+
+(0) Перегрузка операторов? 
+public static AnyClassName operation +(AnyClassName anyClassNameObject, int anyIntVar) 
+{
+// Это перегрузка оператора + при прибавлении к объекту типа AnyClassName переменной типа int
+// Пример: new AnyClassName + 5 - результатом данного кода будет то, что вернет этот метод
+// Тут создаем и возвращаем новый объект типа AnyClassName
+}
+
+(1) prop / propfull - макросы в Visual Studio для создания свойств
+=> https://docs.microsoft.com/ru-ru/dotnet/csharp/programming-guide/classes-and-structs/properties
+Свойства создаются у классов, состоят из некой приватной переменной, геттера и сеттера
+
+// Пример обычного свойства
+private int _abc;
+public int Abc 
+{
+    get { return _abc; } // get => _abc;
+    set { _abc = value; } 
+}
+
+// Пример автоматического свойства
+public int Abc { get; set; }
+
+(2) delegate - Некая сигнатура метода (возвращаемый тип + типы параметров),
+которая хранит в себе ссылку/ссылки на другие методы, либо не хранит ничего
+При использовании делегата - будут вызваны методы, ссылки на которые он хранит
+
+=> https://metanit.com/sharp/tutorial/3.13.php
+
+// Метод, сигнатура которого совпадает с сигнатурой делегата
+void ShowHello(int param)
+{
+    Console.Write("Hello.." + param);
+}
+
+// Объявление делегата
+delegate void ShowMessageDelegateType(int anyName);
+// Создание переменной делегата
+ShowMessageDelegateType mesDelegate;
+// Присваиваем делегату ссылку на метод
+mesDelegate = ShowHello; // Если пару раз сделаем mesDelegate += ShowHello; - то будут присвоины пара ссылок и при вызове делегата этот метод будет вызван несколько раз
+...
+// Вызываем делегат, а точнее все методы, на которые он хранит ссылки
+mesDelegate(5555);
+
+(3) Лямбда-функции
+=> https://docs.microsoft.com/ru-ru/dotnet/csharp/language-reference/operators/lambda-expressions
+Это анонимные функции, которые не имею имени, зачастую используются с делегатами (не с такими банальными как delegate)
+Оператор лямбда-функции =>
+
+Пример возможной структуры: 
+(тип_переменной1 название_переменной1, тип_переменной2 название_переменно2) => название_перменной1 + название_переменной2;
+
+Запишем эту же структуру наглядно:
+(int a, int b) => a + b;
+
+Чтобы проще всего это объяснить и понять, это по-сути функция, которая эквивалентна такому методу как:
+void Sum(int a, int b)
+{
+    return a + b;
+}
